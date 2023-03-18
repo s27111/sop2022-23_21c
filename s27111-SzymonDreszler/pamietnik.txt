@@ -1,0 +1,15 @@
+2023-03-04
+Moj kochany pamietniczku na dzisiejszych zajeciach nauczylem sie:
+Dziś nauczyłem się instalacji debiana oraz przypomniałem sobie obsługi Virtual Box'a.
+
+Opis zajec:
+zajęcia bardzo obszerne, masa wiedzy do przyswojenia.
+
+Co jest dla Ciebie jeszcze nie jasne i musisz poglebic temat:
+Partycjonowanie dysków
+
+Co bylo zaskakujacego:
+Intuicyjna instalacja, możliwość wgrania systemu z chmury
+
+Twoje przemyslenia o calych zajeciach i zadaniach:
+zajęcia ciekawe ponieważ debiana wgrywałem pierwszy raz, zadania czasochłonne, ale bardzo pomocne

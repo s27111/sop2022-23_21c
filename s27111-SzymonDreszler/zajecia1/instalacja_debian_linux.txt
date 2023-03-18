@@ -1,0 +1,78 @@
+Przygotowanie VirtualBox'a
+1. Wgranie obrazu debiana
+-nazwa debian
+-wybor folderu maszyny 
+-automatycznie typ linux
+-automatycznie wersja Debian (64-bit)
+
+2. Przydzial pamieci ram 
+-przydzielam 4GB, (4096MB) aby szybciej przebiegla instalacja
+
+3. Dysk
+-tworze wirtualny dysk VDI
+VDI-->  format VirtualBox'a, najbardziej kompatynilna wersja, to wybieram
+VHD-->  format uzywany przez Hyper-V, nie korzystne aktualnie dla mnie
+VMDK--> format od VMWare, nie korzystam z VMWare'a wiec jej nie wybieram
+-wybieram opcje dynamicznie przydzielany ze wzgledu na krotka demonstracje instalacji systemu
+staly rozmiar--> dysku, szybszy zapis plikow, w moich aktualnych celach bez roznicy 
+-rozmiar dysku ustawiam na 4GB, jest to wystarczajaca ilosc z lekkim zapasem, nie potrzeba  o wiele wiecej jest to tylko w celach demonstracyjnych
+
+4. Zmiana ustawien
+Ogolne-->nic nie zmieniam nie potrzebuje wspolnego schowka, czy przeciaganie i upuszczanie, nie dodaje opisu i nie szyfruje dysku
+System-->Plyta glowna--> urzadzenie wskazujace-->mysz ps/2 reszty nie zmieniam
+Ekran-->nie zmieniam pamieci, ilosci monitorow, kontroler graficzny domyslnie VMSVGA, nie bede uzywal zdalnego pulpitu ani nagrywania
+Pamiec-->wszystko ladnie pieknie ustawione
+Dzwiek-->wylacz dzwiek, nie potrzebuje
+Siec-->Karta 1-->NAT zeby miec internet
+Porty szeregowe--> wszystko domyslnie
+USB--> wlacz kontroler USB
+Udostępniane foldery i Interfejs użytkownika-->nic nie zmieniam
+
+5. Dysk startowy
+-dodaje pobrany obraz debian'a i uruchamiam
+
+6.Proces instalacji
+Graphical Install-->graficzny interfejs, nie wybieram wiecej zasobow do pobrania
+Install-->interfejs tekstowy to wybieram.
+Advanced options--> w opcjach znajdziemy powrót do poprzedniego menu, opcje instalacji eksperta, która pozwala płynnie przejść pomiedzy krokami instalacji.
+Dalej rescue mode, naprawa systemu tyle, automated install przydatne przy stawianiu systemu na wielu urządzeniach.
+Kolejne 3 opcje to, to samo tylko bez interfejsu graficznego tylko tekstowy.Speech-enabled advanced options opcje do ustawienia syntezatora mowy.
+Accesible dark contrast installer menu--> wysoki kontrast
+help--> pomoc
+Install with speech synthesis--> uruchomienie instalatora z syntezatorem dźwięku. 
+
+Wybór języka--> angielski --> inne --> europa --> polska --> USA, UTF-8--> american english 
+
+host name: debian-->skip-->root password root1-->re-enter password root1-->nazwa uzytkownika user
+-->login user--> hasło dla usera root1-->re-enter hasła root1
+
+7.Podział na partycje
+Guided use entire disk-->użycie całej przestrzeni dyskowej, wybieram ten bo jest to najprostsza opcja-->
+wybór dysku-->wybór schematu partycjonowania-->dostałem podział na partycje pierwsza podstawowa 2.1GB system plików ext4
+najnowsza i nalepsza wersja ext(extended file system) z zalet większa ilość podfolderów, kompatybilność z wcześniejszymi wersjami 
+piąta partycja logiczna 2GB system plików swap czyli partycja wymiany służąca do przechowywania tymczasowych danych gdy ilość przekracza zasoby wolnej pamięci.-->write the changes to disks-->
+Guided use entire disk and set up LVM-->całe uzycie wraz z logicznym zarządzaniem woluminami
+Guided use entire disk and set up encrypted LVM-->całe użycie wraz z logicznym szyfrowaniem woluminów 
+Manual-->ręczne przydzielanie pamięci
+
+nic dalej nie doinstalowywuje wiec pomijam
+
+8.ustawienie serwera
+Poland-->ftp.task.gda.pl najbliższy serwer-->pomijam proxy(serwer pośredniczy)
+
+Installation step failed :c
+abort the installation
+
+wywalenie starej maszyny postawienie nowej--> zrobienie wszystkiego jeszcze raz aż do partycjonowania -->
+wybór opcji manualnej, przydzielenie pierwszej partycji primary ext4 2GB druga swap area 1.5 Gb pozostawienie
+0.5 Gb wolnej pamięci na zapas--> pominięcie proxy--> pominięcie brania udziału w anonimowych statystykach
+
+wybór systemu
+tylko standard system utilities czyli standard pakietów zadań (https://csmojo.com/posts/what-debian-standard-system-utilities-include.html) przykładowo co zawiera
+
+install the GRUB boot loader <yes> jest to program do uruchomienina systemu
+
+Instalation complete!
+
+
+
